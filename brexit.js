@@ -10,7 +10,10 @@ var leave = 51.9;
 var remain = 48.1;
 
 if (leave > remain) {
-  delete eu[27];
+  var ukIndex = eu.indexOf('United Kingdom');
+
+  if (ukIndex === -1) throw new Error('UK already does not belong to EU.');
+  delete eu[ukIndex];
   console.log('Goodbye, UK!');
 } else {
   console.log('European Union: ' + eu.join(', '));
